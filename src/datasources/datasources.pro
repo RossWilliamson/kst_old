@@ -5,7 +5,8 @@ CONFIG += ordered
 SUBDIRS += \
     ascii \
     qimagesource \
-    sampledatasource
+    sampledatasource \
+    netcdf4 
 
 LibExists(cfitsio) {
     message(CFITSIO configured.  Plugins will be built.)

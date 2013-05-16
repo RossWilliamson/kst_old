@@ -41,6 +41,12 @@ if(netcdf)
 	kst_link(${NETCDF_LIBRARIES})
 endif()
 	
+if(netcdf4)
+  include_directories(${NETCDF4_INCLUDE_DIR})
+  kst_add_plugin(. netcdf4)
+  kst_link(${NETCDF4_LIBRARIES})
+endif()
+
 if(planckIDEF)
 	kst_add_plugin(. planckIDEF)
 endif()

@@ -17,6 +17,7 @@
 #include <psversion.h>
 #include <sysinfo.h>
 #include <QThreadPool>
+#include <iostream>
 
 #include "colorsequence.h"
 #include "curve.h"
@@ -115,6 +116,7 @@ DataSourcePtr DataWizardPageDataSource::dataSource() const {
 
 
 QStringList DataWizardPageDataSource::dataSourceFieldList() const {
+ 
   return _dataSource->vector().list();
 }
 
@@ -145,7 +147,8 @@ void DataWizardPageDataSource::sourceValid(QString filename, int requestID) {
     DataSourcePtr tmpds = _dataSource; // increase usage count
     _store->cleanUpDataSourceList();
   }
-
+    
+ 
   updateUpdateBox();
 
   emit completeChanged();

@@ -137,6 +137,7 @@ void ObjectStore::cleanUpDataSourceList() {
   currentSourceList.append(_dataSourceList);
   // clean up unused data sources
   for (DataSourceList::Iterator it = currentSourceList.begin(); it != currentSourceList.end(); ++it) {
+    qDebug() << "R1 " << (*it)->getUsage();
     if ((*it)->getUsage() <= 1) {
       removeObject(*it);
     }
